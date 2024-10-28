@@ -9,13 +9,22 @@ const {
   updateTask,
 } = require("../controllers/taskController");
 
-router.route("/").get(getTasks).post(createTask);
-router.route("/:id").get(getTask).delete(deleteTask).put(updateTask);
+// router.route("/").get(getTasks).post(createTask);
+// router.route("/:id").get(getTask).delete(deleteTask).put(updateTask);
 
-// router.post("/", createTask);
-// router.get("/", getTasks);
-// router.get("/:id", getTask);
-// router.delete("/:id", deleteTask);
-// router.put("/:id", updateTask);
+//Post API
+router.post("/", createTask);
+
+//Get All Tasks
+router.get("/", getTasks);
+
+//Get Particular Task
+router.get("/:id", getTask);
+
+//Delete Task
+router.delete("/:id", deleteTask);
+
+//Update Task
+router.put("/:id", updateTask);
 
 module.exports = router;
